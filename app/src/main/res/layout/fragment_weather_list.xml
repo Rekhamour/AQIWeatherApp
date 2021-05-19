@@ -67,7 +67,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/weatherList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_height="0dp"
             android:layout_below="@id/titleView"
             android:layoutAnimation="@anim/layout_animation"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"

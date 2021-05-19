@@ -14,7 +14,9 @@ import com.example.aqiweatherapp.Utils.Status
 import com.example.aqiweatherapp.data.model.City
 import com.example.aqiweatherapp.databinding.FragmentWeatherListBinding
 import com.example.aqiweatherapp.ui.main.adapter.CityListAdapter
+import com.example.aqiweatherapp.ui.main.view.MainActivity
 import com.example.aqiweatherapp.ui.main.viewmodel.MainViewModel
+import com.google.android.material.snackbar.Snackbar
 
 
 class WeatherListFragment : Fragment() {
@@ -57,7 +59,6 @@ class WeatherListFragment : Fragment() {
                 DividerItemDecoration.VERTICAL
             )
         )
-
     }
 
     private fun setupViewModel() {
@@ -85,6 +86,22 @@ class WeatherListFragment : Fragment() {
                 binding.weatherList.visibility = View.GONE
                 binding.loadingGif.visibility = View.VISIBLE
             }
+            else if (it.status == Status.ERROR){
+                binding.titleView.visibility = View.GONE
+                binding.weatherList.visibility = View.GONE
+                binding.loadingGif.visibility = View.GONE
+                showFailedSnackbar(it.message!!)
+            }
         })
+    }
+
+    private fun showFailedSnackbar(error :String){
+        val snackbar = Snackbar
+            .make(binding.root, "Error : $error", Snackbar.LENGTH_INDEFINITE)
+            .setAction("Retry") {
+                (context as MainActivity).initSocket()
+            }
+
+        snackbar.show()
     }
 }

@@ -2,15 +2,10 @@ package com.example.aqiweatherapp.ui.main.view
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.aqiweatherapp.R
 import com.example.aqiweatherapp.Utils.LimitedSizeQueue
 import com.example.aqiweatherapp.Utils.Resource
@@ -19,7 +14,6 @@ import com.example.aqiweatherapp.data.model.City
 import com.example.aqiweatherapp.data.model.Stats
 import com.example.aqiweatherapp.databinding.ActivityMainBinding
 import com.example.aqiweatherapp.ui.base.MainViewModelFactory
-import com.example.aqiweatherapp.ui.main.adapter.CityListAdapter
 import com.example.aqiweatherapp.ui.main.fragment.WeatherListFragment
 import com.example.aqiweatherapp.ui.main.viewmodel.MainViewModel
 import com.example.mainactivity.Utils.Constants
@@ -27,7 +21,6 @@ import org.java_websocket.client.WebSocketClient
 import org.java_websocket.handshake.ServerHandshake
 import org.json.JSONArray
 import java.net.URI
-import java.util.*
 import javax.net.ssl.SSLSocketFactory
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -48,8 +41,8 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
-        cityStatsMap = HashMap()
         setContentView(binding.root)
+        cityStatsMap = HashMap()
         setupViewModel()
         loadListFragment()
     }
@@ -74,7 +67,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initSocket(){
+    public fun initSocket(){
+        mainViewModel.cities.postValue(Resource(Status.LOADING, ArrayList(), "Fetched Data"))
         webSocketClient = object : WebSocketClient(URI(Constants.SOCKET_URL)) {
             override fun onOpen(handshakedata: ServerHandshake?) {
                 Log.i(TAG, "onOpen: ")
@@ -112,12 +106,12 @@ class MainActivity : AppCompatActivity() {
 
             override fun onError(ex: Exception?) {
                 Log.i(TAG, "onError: " + ex.toString())
+                mainViewModel.cities.postValue(Resource(Status.ERROR, ArrayList(), "Socket Connection Issue"))
             }
         }
         webSocketClient.setSocketFactory(SSLSocketFactory.getDefault())
         webSocketClient.connect()
     }
-
 
     override fun onPause() {
         super.onPause()

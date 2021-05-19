@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.example.aqiweatherapp.R
 import com.example.aqiweatherapp.Utils.ColorUtils
 import com.example.aqiweatherapp.Utils.LimitedSizeQueue
 import com.example.aqiweatherapp.Utils.TimeUtils
@@ -63,8 +64,6 @@ class GraphFragment : Fragment() {
 
         mainViewModel.cityMap.observe(this, {
             if (it.containsKey(binding.cityName.text)) {
-                Log.i(TAG, "setupViewModel: " + it.get(binding.cityName.text)!!)
-
                 updateChart(it.get(binding.cityName.text)!!);
             }
         })
@@ -74,6 +73,7 @@ class GraphFragment : Fragment() {
         binding.chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
         binding.chart.xAxis.setGranularity(1f);
         binding.chart.xAxis.setGranularityEnabled(true);
+        binding.chart.legend.isEnabled = false
         binding.chart.xAxis.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
                 if(value<labels.size){
@@ -90,8 +90,13 @@ class GraphFragment : Fragment() {
         labels  = Array(list.size,{""})
         colors  = ArrayList()
         var index: Int = 0;
-
-
+        if(list.size>=2){
+            if(list[list.size-2].aqi-list[list.size-1].aqi<0){
+                binding.aqiRate.setImageDrawable(context!!.resources.getDrawable(R.drawable.ic_baseline_arrow_upward_24))
+            }else{
+                binding.aqiRate.setImageDrawable(context!!.resources.getDrawable(R.drawable.ic_baseline_arrow_downward_24))
+            }
+        }
         for (item in list) {
             labels[index] = TimeUtils.getFormatedTimeHelper(item.lastUpdated, "HH:mm a");
             values.add(BarEntry(index++.toFloat(), item.aqi.toFloat()))

@@ -15,30 +15,70 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black"></ImageView>
 
-    <TextView
-        android:id="@+id/cityName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="City A"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="@dimen/title_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/backBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
-        app:layout_constraintStart_toEndOf="@id/backBtn"
-        app:layout_constraintTop_toTopOf="@id/backBtn"
-        app:layout_constraintVertical_bias="0.571" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/titleLinear"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn"
+        app:layout_constraintBottom_toTopOf="@id/chart"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="City A"
+            android:gravity="center"
+            android:background="@drawable/header_bg"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_text_size" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:background="@drawable/header_bg"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/cityAQI"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:text="City A"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_text_size" />
+
+            <ImageView
+                android:id="@+id/aqiRate"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="left|center_vertical"
+                android:src="@drawable/ic_baseline_arrow_upward_24"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.github.mikephil.charting.charts.BarChart
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="0dp"
         android:id="@+id/chart"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="40dp"
-        android:background="@color/white"
+        android:paddingBottom="30dp"
+        android:background="@drawable/item_bg"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cityName"
+        app:layout_constraintTop_toBottomOf="@id/titleLinear"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"></com.github.mikephil.charting.charts.BarChart>
 
