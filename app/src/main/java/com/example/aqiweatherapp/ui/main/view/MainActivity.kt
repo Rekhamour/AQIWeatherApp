@@ -81,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onMessage(message: String?) {
+                Log.i(TAG, "onMessage: ")
                 var response: JSONArray = JSONArray(message)
                 var data: ArrayList<City> = ArrayList();
                 for (i in 0 until response.length()) {

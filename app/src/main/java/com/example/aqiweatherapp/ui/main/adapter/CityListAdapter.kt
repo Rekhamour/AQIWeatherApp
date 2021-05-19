@@ -64,7 +64,6 @@ class CityListAdapter(val context: Context, val list: ArrayList<City>) :
             transaction.commit()
         }
     }
-
     override fun getItemCount(): Int {
         return list.size
     }
