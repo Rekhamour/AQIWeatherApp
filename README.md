@@ -1,7 +1,7 @@
 # WeatherAQIApp
 Its a Weather AQI app that lets user see the AQI indexes of Multiple Indian Cities and
 also Shows DataVisualization of graph showing Previous AQI indices.
-Apk file is Available [here]("./AQI App.apk").
+Apk file is Available [here]("AQI App.apk").
 App uses WebSocket to communicate with Server
 WS URL : wss://city-ws.herokuapp.com/
 
