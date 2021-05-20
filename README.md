@@ -7,7 +7,7 @@ WS URL : wss://city-ws.herokuapp.com/
 
 ## Screenshots
 ![GIF](./Screenshots/gif.mp4)
-
+<img src="./Screenshots/Screenshot_1.jpg" align="left" height="720" width="320" >
 ![GIF](./Screenshots/Screenshot_1.jpg){:height="50%" width="50%"}![GIF](./Screenshots/Screenshot_2.jpg){:height="50%" width="50%"}![GIF](./Screenshots/Screenshot_3.jpg){:height="50%" width="50%"}
 
 ## Features
