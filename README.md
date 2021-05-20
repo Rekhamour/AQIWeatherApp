@@ -8,7 +8,7 @@ WS URL : wss://city-ws.herokuapp.com/
 ## Screenshots
 ![GIF](./Screenshots/gif.mp4)
 
-![GIF](./Screenshots/Screenshot_1.jpg)![GIF](./Screenshots/Screenshot_2.jpg)![GIF](./Screenshots/Screenshot_3.jpg)
+![GIF](./Screenshots/Screenshot_1.jpg =720x1280)![GIF](./Screenshots/Screenshot_2.jpg =720x1280)![GIF](./Screenshots/Screenshot_3.jpg =720x1280)
 
 ## Features
 This app lets you :
