@@ -6,7 +6,7 @@ App uses WebSocket to communicate with Server
 WS URL : wss://city-ws.herokuapp.com/
 
 ## Screenshots
-![GIF](/Screenshot/gif.mp4)
+![GIF](/Screenshots/gif.mp4)
 
 ## Features
 This app lets you :
