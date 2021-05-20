@@ -7,9 +7,11 @@ WS URL : wss://city-ws.herokuapp.com/
 
 ## Screenshots
 <img src="./Screenshots/ezgif-2-f5aebeb6df6e.gif" align="left" height="720" width="320" >
+<br>
 <img src="./Screenshots/Screenshot_1.jpg" align="left" height="720" width="320" >
 <img src="./Screenshots/Screenshot_2.jpg" align="left" height="720" width="320" >
 <img src="./Screenshots/Screenshot_3.jpg" align="left" height="720" width="320" >
+<br>
 
 ## Features
 This app lets you :
