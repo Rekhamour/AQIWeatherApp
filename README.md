@@ -1,5 +1,5 @@
 # WeatherAQIApp
-its an waether aqi app which live updates of air quality index citiwise to the user.
+Its an waether aqi app which live updates of air quality index citiwise to the user.
 .When user click on a city ,it will show previous aqis in graph form.
 Apk file is Available.
 App uses WebSocket to communicate with Server
