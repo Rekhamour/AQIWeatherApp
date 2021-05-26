@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AQIWeatherApp</string>
+    <string name="app_name">AqiApp</string>
     <dimen name="title_text_size">18dp</dimen>
     <dimen name="content_text_size">16dp</dimen>
     <!-- TODO: Remove or change this placeholder text -->

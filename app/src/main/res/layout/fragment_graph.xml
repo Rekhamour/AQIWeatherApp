@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.main.fragment.GraphFragment">
+    tools:context=".ui.main.fragment.DetailFragment">
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -34,7 +34,7 @@
             android:text="City A"
             android:gravity="center"
             android:background="@drawable/header_bg"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="@dimen/title_text_size" />
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -50,7 +50,7 @@
                 android:layout_height="match_parent"
                 android:gravity="right|center_vertical"
                 android:text="City A"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="@dimen/title_text_size" />
 

@@ -18,7 +18,11 @@ allprojects {
     repositories {
         google()
         maven { url 'https://jitpack.io' }
-        jcenter()
+        mavenCentral()
+        maven {
+            url "https://dl.bintray.com/google/mobile-ads-adapters-android/"
+        }
+        //jcenter()
     }
 }
 
