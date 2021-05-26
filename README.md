@@ -1,20 +1,20 @@
 # WeatherAQIApp
 Its a Weather AQI app that lets user see the AQI indexes of Multiple Indian Cities and
 also Shows DataVisualization of graph showing Previous AQI indices.
-Apk file is Available [here]("AQI App.apk").
+Apk file is Available.
 App uses WebSocket to communicate with Server
 WS URL : wss://city-ws.herokuapp.com/
 
 ## Screenshots
 <p>
   <br>
-  <img src="./Screenshots/Sc1.jpg" align="left" height="720" width="320" >
-  <img src="./Screenshots/Sc2.jpg" align="left" height="720" width="320" >
+  <img src="./Screenshots/sc1.jpg" align="left" height="720" width="320" >
+  <img src="./Screenshots/sc2.jpg" align="left" height="720" width="320" >
   <br>
 </p>
 
 ## Features
-This app lets you :
+This app shows you the following data :
 - See AQI data of Indian Cities relatime updates
 - Lets user See Previous AQI data of Cities in the form of graph.
 
@@ -31,10 +31,9 @@ This app lets you :
 
 
 ## Time Spent on Each Module
-- Socket Setup : 1 hour
+- Base Project setup : 1 hour
 - UI Animations,Icons Assets etc : 1 Hour
 - MVVM Setup : 2 Hour
-- Graph Library Setup : 2 Hour
 - Bugs and Debugging  : 1 Hour
 
 
